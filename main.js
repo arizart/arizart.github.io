@@ -3,9 +3,9 @@ function ClickToSlideIn(e) {
 		return;
 	}
 
-	let activeNavBtn = document.querySelector(".active-nav-btn");
-	activeNavBtn.classList.remove("active-nav-btn");
-	e.target.classList.add("active-nav-btn");
+	let activeNavBtn = document.querySelector(".nav-btn-active");
+	activeNavBtn.classList.remove("nav-btn-active");
+	e.target.classList.add("nav-btn-active");
 
 	activePage = e.target.getAttribute("data-target");
 	let page = document.querySelector(`#page${activePage}`);
@@ -18,8 +18,8 @@ function ScrollToSlideIn(e) {
 		return;
 	}
 
-	let activeNavBtn = document.querySelector(".active-nav-btn");
-	activeNavBtn.classList.remove("active-nav-btn");
+	let activeNavBtn = document.querySelector(".nav-btn-active");
+	activeNavBtn.classList.remove("nav-btn-active");
 
 	if (0 < e.deltaY) {
 		activePage + 1 < 5 ? ++activePage : (activePage = 1);
@@ -28,25 +28,22 @@ function ScrollToSlideIn(e) {
 	}
 
 	activeNavBtn = document.querySelector(
-		`#navbar a[data-target="${activePage}"`
+		`.nav .nav-btn[data-target="${activePage}"`
 	);
-	activeNavBtn.classList.add("active-nav-btn");
+	activeNavBtn.classList.add("nav-btn-active");
 	let page = document.querySelector(`#page${activePage}`);
 
 	SlideInFromSide(page, GetRandomSide());
 }
 
 function SlideInFromSide(page, side) {
-	let active = document.querySelector(".slide-in-active");
-
-	if (active) {
-		active.className = "page-container";
-	}
+	let active = document.querySelector(".slide-active");
+	active.className = "page-container";
 
 	pages.forEach(e => e.style.zIndex--);
 	page.style.zIndex = pageCount;
 	page.classList.add(`slide-from-${side}`);
-	setTimeout(() => page.classList.add("slide-in-active"), 10);
+	setTimeout(() => page.classList.add("slide-active"), 10);
 }
 
 function GetRandomSide() {
@@ -82,7 +79,7 @@ function Init() {
 		window.activePage = 1;
 		window.cooldown = 300;
 
-		const navBtns = document.querySelectorAll("#navbar a");
+		const navBtns = document.querySelectorAll(".nav .nav-btn");
 		pages = document.querySelectorAll(".page-container");
 		let len = (pageCount = pages.length);
 

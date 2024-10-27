@@ -61,19 +61,22 @@ body,
 		align-self: flex-start;
 		justify-self: end;
 		margin-right: 12em;
-		> a {
+	}
+
+	.nav {
+		> a.nav-btn {
 			cursor: pointer;
 			padding: 1rem 2rem;
 			text-decoration: none;
 			font-size: 1.2rem;
 			transition: all 300ms;
 		}
-		> a:hover {
+		> a.nav-btn:hover {
 			box-shadow: 0 0 0.25rem rgba(var(--rgb-color6), 0.6);
 			background-color: var(--color5);
 			color: var(--color6);
 		}
-		> a.active-nav-btn {
+		> a.nav-btn.nav-btn-active {
 			box-shadow: 0 0 0.25rem rgba(var(--rgb-color6), 0.6);
 			background-color: var(--color5);
 			color: var(--color6);
@@ -102,7 +105,7 @@ body,
 		transform: translateX(-100vw);
 	}
 
-	.slide-in-active {
+	.slide-active {
 		transform: translate(0, 0);
 		transition: all 500ms;
 	}
