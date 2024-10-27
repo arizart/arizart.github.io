@@ -7,7 +7,7 @@ function ClickToSlideIn(e) {
 	activeNavBtn.classList.remove("nav-btn-active");
 	e.target.classList.add("nav-btn-active");
 
-	activePage = e.target.getAttribute("data-target");
+	activePage = Number(e.target.getAttribute("data-target"));
 	let page = document.querySelector(`#page${activePage}`);
 
 	SlideInFromSide(page, GetRandomSide());
