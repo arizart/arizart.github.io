@@ -79,7 +79,7 @@ function Init() {
 		window.activePage = 1;
 		window.cooldown = 300;
 
-		const navBtns = document.querySelectorAll(".nav .nav-btn");
+		const navBtns = document.querySelectorAll("#navbar.nav .nav-btn");
 		pages = document.querySelectorAll(".page-container");
 		let len = (pageCount = pages.length);
 

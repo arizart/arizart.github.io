@@ -63,12 +63,27 @@ body,
 		margin-right: 12em;
 	}
 
+	#socials {
+		display: flex;
+		flex-direction: column;
+		align-self: flex-end;
+		justify-self: start;
+		margin-bottom: 18em;
+	}
+
+	#copyright {
+		position: absolute;
+		margin-bottom: 3em;
+		align-self: flex-end;
+		justify-self: center;
+		cursor: default;
+	}
+
 	.nav {
 		> a.nav-btn {
 			cursor: pointer;
-			padding: 1rem 2rem;
+			padding: 1em 2em;
 			text-decoration: none;
-			font-size: 1.2rem;
 			transition: all 300ms;
 		}
 		> a.nav-btn:hover {
@@ -85,8 +100,15 @@ body,
 
 	.page-container {
 		position: absolute;
-		width: 100vw;
 		box-shadow: 0 0 3rem rgba(var(--rgb-color6), 0.75);
+		width: 100vw;
+		padding: 5em 8em;
+		display: grid;
+		> * {
+			align-self: center;
+			justify-self: center;
+			font-size: 18em;
+		}
 	}
 
 	.slide-from-top {
@@ -107,7 +129,7 @@ body,
 
 	.slide-active {
 		transform: translate(0, 0);
-		transition: all 500ms;
+		transition: transform 500ms;
 	}
 }
 
