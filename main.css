@@ -1,8 +1,8 @@
 :root {
-	--color1: #2196f3;
-	--color2: #e91e63;
-	--color3: #8bc34a;
-	--color4: #ff9800;
+	--color1: #3f51b5;
+	--color2: #ff5722;
+	--color3: #4caf50;
+	--color4: #e91e63;
 	--color5: #fafafa;
 	--color6: #212121;
 	--rgb-color6: 33, 33, 33;
@@ -14,6 +14,7 @@
 	box-sizing: border-box;
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 	color: var(--color5);
+	user-select: none;
 }
 
 html,
@@ -24,19 +25,19 @@ body,
 }
 
 #page1 {
-	background-color: var(--color1);
+	background: var(--color1);
 }
 
 #page2 {
-	background-color: var(--color2);
+	background: var(--color2);
 }
 
 #page3 {
-	background-color: var(--color3);
+	background: var(--color3);
 }
 
 #page4 {
-	background-color: var(--color4);
+	background: var(--color4);
 }
 
 @media only screen and (min-width: 992px) {
@@ -50,6 +51,7 @@ body,
 		height: 100vh;
 		width: 100vw;
 		display: grid;
+		mix-blend-mode: lighten;
 		pointer-events: none;
 		> div {
 			display: flex;
@@ -60,7 +62,7 @@ body,
 	#navbar {
 		align-self: flex-start;
 		justify-self: end;
-		margin-right: 12em;
+		margin-right: 16rem;
 	}
 
 	#socials {
@@ -68,32 +70,35 @@ body,
 		flex-direction: column;
 		align-self: flex-end;
 		justify-self: start;
-		margin-bottom: 18em;
+		margin-bottom: 18rem;
+		> .nav-btn > svg {
+			fill: inherit;
+		}
 	}
 
 	#copyright {
 		position: absolute;
-		margin-bottom: 3em;
+		margin-bottom: 3rem;
 		align-self: flex-end;
 		justify-self: center;
 		cursor: default;
 	}
 
 	.nav {
-		> a.nav-btn {
+		> .nav-btn {
 			cursor: pointer;
-			padding: 1em 2em;
+			padding: 0.8rem 1.6rem;
 			text-decoration: none;
+			fill: var(--color5);
 			transition: all 300ms;
 		}
-		> a.nav-btn:hover {
-			box-shadow: 0 0 0.25rem rgba(var(--rgb-color6), 0.6);
-			background-color: var(--color5);
+		> .nav-btn:hover {
+			background: var(--color5);
 			color: var(--color6);
+			fill: var(--color6);
 		}
-		> a.nav-btn.nav-btn-active {
-			box-shadow: 0 0 0.25rem rgba(var(--rgb-color6), 0.6);
-			background-color: var(--color5);
+		> .nav-btn.nav-btn-active {
+			background: var(--color5);
 			color: var(--color6);
 		}
 	}
@@ -102,7 +107,7 @@ body,
 		position: absolute;
 		box-shadow: 0 0 3rem rgba(var(--rgb-color6), 0.75);
 		width: 100vw;
-		padding: 5em 8em;
+		padding: 5rem 8rem;
 		display: grid;
 		> * {
 			align-self: center;
